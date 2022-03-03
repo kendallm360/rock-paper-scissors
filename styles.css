@@ -4,6 +4,7 @@
 
 } */
 main {
+  font-family: "monospace", "monaco";
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -11,6 +12,8 @@ main {
 }
 
 .human-section {
+  background-color: rgb(223, 205, 108);
+
   width: 20%;
   border: solid 3px red;
 }
@@ -21,9 +24,11 @@ main {
 
 .human-wins {
   border: solid 3px green;
+  font-size: 20;
 }
 
 .main-section {
+  background-color: rgb(228, 216, 53);
   width: 60%;
   border: solid 3px gray;
   display: flex;
@@ -42,21 +47,44 @@ header {
 }
 h1 {
   border: solid 3px green;
+  font-size: 36;
+  margin-bottom: 1px;
 }
 
 h2 {
   border: solid 3px green;
+  font-size: 20;
 }
 
 .easy-mode {
   border: solid 3px yellow;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 10px;
 }
 
 .hard-mode {
   border: solid 3px yellow;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .computer-section {
+  background-color: rgb(223, 205, 108);
+
   width: 20%;
   border: solid 3px blue;
 }
@@ -67,4 +95,5 @@ h2 {
 
 .computer-wins {
   border: solid 3px green;
+  font-size: 20;
 }
