@@ -1,0 +1,99 @@
+/* body {
+  height: 100%;
+  border: solid 3px pink;
+
+} */
+main {
+  font-family: "monospace", "monaco";
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  border: solid 3px black;
+}
+
+.human-section {
+  background-color: rgb(223, 205, 108);
+
+  width: 20%;
+  border: solid 3px red;
+}
+
+.human-icon {
+  border: solid 3px yellow;
+}
+
+.human-wins {
+  border: solid 3px green;
+  font-size: 20;
+}
+
+.main-section {
+  background-color: rgb(228, 216, 53);
+  width: 60%;
+  border: solid 3px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+h1 {
+  border: solid 3px green;
+  font-size: 36;
+  margin-bottom: 1px;
+}
+
+h2 {
+  border: solid 3px green;
+  font-size: 20;
+}
+
+.easy-mode {
+  border: solid 3px yellow;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 10px;
+}
+
+.hard-mode {
+  border: solid 3px yellow;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.computer-section {
+  background-color: rgb(223, 205, 108);
+
+  width: 20%;
+  border: solid 3px blue;
+}
+
+.computer-icon {
+  border: solid 3px yellow;
+}
+
+.computer-wins {
+  border: solid 3px green;
+  font-size: 20;
+}
