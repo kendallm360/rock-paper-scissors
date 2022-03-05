@@ -1,16 +1,20 @@
 class Game {
-  constructor(human, computer) {
+  constructor() {
     this.options = ["rock", "paper", "scissors"];
-    this.humanWeapon = "rock";
-    this.computerWeapon = this.getWeapon();
+    this.player = new Player("human");
+    this.computer = new Player("computer");
+    this.humanWeapon = this.player.getWeapon();
+    this.computerWeapon = this.computer.getWeapon();
     this.computerWins = 0;
-    this.player = new Player(human);
+    // this.computer =
   }
-  getSelection(options) {
-    ///need to set up a function or for loop that generates the selection and "gives" it to the computer
-    return Math.floor(Math.random() * options.length);
+  playRound() {
+    this.humanWeapon = this.player.getWeapon();
+    this.computerWeapon = this.computer.getWeapon();
   }
+
   declareWinner() {
+    this.playRound();
     if (this.humanWeapon === "rock" && this.computerWeapon === "paper") {
       return "The Computer Wins This Round";
     }
@@ -33,25 +37,23 @@ class Game {
     if (this.humanWeapon === this.computerWeapon) {
       return "It's A Draw";
     }
+    // this.addPoint();
+    console.log("comp", this.computerWins);
+    console.log("hum", this.player.wins);
   }
 
   addPoint() {
-    var response = declareWinner();
+    var response = this.declareWinner();
     if (response === "The Computer Wins This Round") {
       this.computerWins++;
       //restart the game?
     }
     if (response === "The Human Wins This Round") {
-      Player.wins++;
+      this.player.wins++;
       //restart the game?
     }
     if (response === "It's A Draw") {
       //restart the game?
     }
-  }
-  getWeapon() {
-    var options = ["rock", "paper", "scissors"];
-    var i = Math.floor(Math.random() * options.length);
-    return options[i];
   }
 }
