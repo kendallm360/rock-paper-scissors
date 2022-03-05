@@ -1,49 +1,40 @@
 class Game {
-  constructor(humanSelection, computerSelection) {
+  constructor(human, computer) {
     this.options = ["rock", "paper", "scissors"];
-    this.humanSelection = humanSelection;
-    this.computerSelection = computerSelection;
+    this.humanWeapon = "rock";
+    this.computerWeapon = this.getWeapon();
     this.computerWins = 0;
+    this.player = new Player(human);
   }
   getSelection(options) {
-    ///need to set up a function or for loop that generates the selection and "gives" it to the userss
+    ///need to set up a function or for loop that generates the selection and "gives" it to the computer
     return Math.floor(Math.random() * options.length);
   }
   declareWinner() {
-    if (this.humanSelection === "rock" && this.computerSelection === "paper") {
+    if (this.humanWeapon === "rock" && this.computerWeapon === "paper") {
       return "The Computer Wins This Round";
     }
-    if (
-      this.humanSelection === "rock" &&
-      this.computerSelection === "scissors"
-    ) {
+    if (this.humanWeapon === "rock" && this.computerWeapon === "scissors") {
+      Player.wins++;
       return "The Human Wins This Round";
     }
-    if (
-      this.humanSelection === "scissors" &&
-      this.computerSelection === "paper"
-    ) {
+    if (this.humanWeapon === "scissors" && this.computerWeapon === "paper") {
       return "The Human Wins This Round";
     }
-    if (
-      this.humanSelection === "scissors" &&
-      this.computerSelection === "rock"
-    ) {
+    if (this.humanWeapon === "scissors" && this.computerWeapon === "rock") {
       return "The Computer Wins This Round";
     }
-    if (this.humanSelection === "paper" && this.computerSelection === "rock") {
+    if (this.humanWeapon === "paper" && this.computerWeapon === "rock") {
       return "The Human Wins This Round";
     }
-    if (
-      this.humanSelection === "paper" &&
-      this.computerSelection === "scissors"
-    ) {
-      return "The Computer WinsThis Round";
+    if (this.humanWeapon === "paper" && this.computerWeapon === "scissors") {
+      return "The Computer Wins This Round";
     }
-    if (this.humanSelection === this.computerSelection) {
+    if (this.humanWeapon === this.computerWeapon) {
       return "It's A Draw";
     }
   }
+
   addPoint() {
     var response = declareWinner();
     if (response === "The Computer Wins This Round") {
@@ -57,5 +48,10 @@ class Game {
     if (response === "It's A Draw") {
       //restart the game?
     }
+  }
+  getWeapon() {
+    var options = ["rock", "paper", "scissors"];
+    var i = Math.floor(Math.random() * options.length);
+    return options[i];
   }
 }

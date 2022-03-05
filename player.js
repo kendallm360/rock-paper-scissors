@@ -1,15 +1,14 @@
 class Player {
   constructor(name) {
     this.name = name;
-    this.wins = wins;
+    this.wins = 0;
+  }
+  // playRound() {
+  //   var weapon = options[getWeapon(options)];
+  // }
+  getWeapon() {
     var options = ["rock", "paper", "scissors"];
-  }
-  playRound() {
-    var character = options[getCharacter(options)];
-  }
-  getCharacter(options) {
-    //how do i connect the argument options above/below to the variable options?
-    return Math.floor(Math.random() * options.length);
+    var i = Math.floor(Math.random() * options.length);
+    return options[i];
   }
 }
-// console.log(Math.floor(Math.random() * this.options.length));
