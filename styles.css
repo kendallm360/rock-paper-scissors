@@ -56,6 +56,7 @@ h2 {
   font-size: 20;
 }
 
+.modern-weapons,
 .classic-weapons {
   margin-bottom: 300px;
 }
@@ -88,6 +89,17 @@ h2 {
   cursor: pointer;
 }
 
+.ninja-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.hunter-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
 p {
   font-size: 10px;
 }
