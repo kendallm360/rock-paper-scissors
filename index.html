@@ -18,13 +18,15 @@
           />
         </div>
         <p class="human-wins">Human Wins:</p>
-        <button class="choose-game hidden">CHANGE GAME</button>
+        <button class="change-game hidden">CHANGE GAME</button>
       </section>
 
       <section class="main-section">
         <header>
           <h1>Rock, Paper, Scissors</h1>
-          <h2>Choose Game</h2>
+          <h2 class="choose-game">Choose Game</h2>
+          <h2 class="choose-weapon hidden">Choose Your Weapon</h2>
+          <h2 class="winner-alert hidden">The "WINNER" Won This Round</h2>
         </header>
 
         <form class="classic-weapons hidden">
@@ -62,34 +64,6 @@
           <p>scissors > paper</p>
         </form>
 
-        <form class="modern-weapons hidden">
-          <img
-            class="rock-emoji"
-            src="./rocks.png"
-            alt="Emoji of the Rock Weapon"
-          />
-          <img
-            class="paper-emoji"
-            src="./documents.png"
-            alt="Emoji of the Paper Weapon"
-          />
-          <img
-            class="scissors-emoji"
-            src="./scissors.png"
-            alt="Emoji of the Scissors Weapon"
-          />
-          <img
-            class="hunter-emoji"
-            src="./hunter.png"
-            alt="Emoji of the Hunter Character"
-          />
-          <img
-            class="ninja-emoji"
-            src="./ninja.png"
-            alt="Emoji of the Ninja Character"
-          />
-        </form>
-
         <form class="modern-mode">
           <h3>Custom</h3>
           <p>rock > scissors & ninja</p>
@@ -98,6 +72,11 @@
           <p>ninja > hunter & paper</p>
           <p>hunter > scissors & rock</p>
         </form>
+
+        <div class="winner-box hidden">
+          the emoji of each player's selection will be shown here for a short
+          period of time
+        </div>
       </section>
 
       <section class="computer-section">
