@@ -27,6 +27,11 @@ main {
   font-size: 20;
 }
 
+.choose-game {
+  color: rgb(228, 216, 53);
+  background-color: black;
+}
+
 .main-section {
   background-color: rgb(228, 216, 53);
   width: 60%;

@@ -119,9 +119,6 @@ class Game {
   }
 }
 
-// (ninja > paper) & hunter;
-// (hunter > scissors) & rock;
-
 //may use a variation of the code below to make the function above more dry/in accordance with SRP
 // addPoint() {
 //   var response = this.declareClassicWinner();
