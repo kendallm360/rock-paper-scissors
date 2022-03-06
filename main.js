@@ -3,8 +3,8 @@ var game = new Game();
 //VARIABLES/QUERY SELECTORS
 var subTitle = document.querySelector("h2");
 var chooseGame = document.querySelector(".choose-game");
-var classicGame = document.querySelector(".easy-mode");
-var modernGame = document.querySelector(".hard-mode");
+var classicGame = document.querySelector(".classic-mode");
+var modernGame = document.querySelector(".modern-mode");
 var classicWeapons = document.querySelector(".classic-weapons");
 var modernWeapons = document.querySelector(".modern-weapons");
 var rock = document.querySelector(".rock-emoji");
@@ -32,19 +32,28 @@ function showClassicWeapons() {
   classicWeapons.classList.remove("hidden");
   classicGame.classList.add("hidden");
   modernGame.classList.add("hidden");
+  hunter.classList.add("hidden");
+  ninja.classList.add("hidden");
+  rock.classList.remove("hidden");
+  paper.classList.remove("hidden");
+  scissors.classList.remove("hidden");
 }
 
 function showModernWeapons() {
   chooseGame.classList.remove("hidden");
   subTitle.classList.add("hidden");
-  modernWeapons.classList.remove("hidden");
+  classicWeapons.classList.remove("hidden");
   classicGame.classList.add("hidden");
   modernGame.classList.add("hidden");
+  hunter.classList.remove("hidden");
+  ninja.classList.remove("hidden");
+  rock.classList.remove("hidden");
+  paper.classList.remove("hidden");
+  scissors.classList.remove("hidden");
 }
 function newGame() {
   chooseGame.classList.add("hidden");
   subTitle.classList.remove("hidden");
-
   classicWeapons.classList.add("hidden");
   modernWeapons.classList.add("hidden");
   classicGame.classList.remove("hidden");
@@ -69,7 +78,7 @@ function pickScissors() {
 function pickNinja() {
   Player.weapon = "ninja";
   console.log(Player.weapon);
-  //   Game.declareWinner();
+  game.declareModernWinner();
 }
 
 function pickHunter() {

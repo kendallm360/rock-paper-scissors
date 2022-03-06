@@ -4,16 +4,17 @@ class Player {
     this.wins = 0;
     this.weapon = null;
   }
-  getClassicWeapon() {
+  getClassicWeapon(weaponClicked) {
     var options = ["rock", "paper", "scissors"];
     var i = Math.floor(Math.random() * options.length);
-    return options[i];
+    return weaponClicked || options[i];
   }
-  getModernWeapon() {
+  getModernWeapon(weaponClicked) {
     var options = ["ninja", "hunter", "rock", "paper", "scissors"];
     var i = Math.floor(Math.random() * options.length);
-    return options[i];
+    return weaponClicked || options[i];
+  }
+  chooseWeapon(weaponClicked) {
+    return weaponClicked || this.getModernWeapon();
   }
 }
-// (ninja > paper) & hunter;
-// (hunter > scissors) & rock;
