@@ -5,17 +5,16 @@
 } */
 main {
   font-family: "monospace", "monaco";
+  border: solid 3px black;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  height: 100%;
-  border: solid 3px black;
 }
 
 .human-section {
   background-color: rgb(223, 205, 108);
-
-  width: 20%;
   border: solid 3px red;
+  width: 20%;
 }
 
 .human-icon {
@@ -28,8 +27,8 @@ main {
 }
 
 .choose-game {
-  color: rgb(228, 216, 53);
   background-color: black;
+  color: rgb(228, 216, 53);
 }
 
 .main-section {
@@ -65,7 +64,9 @@ h2 {
 .classic-weapons {
   margin-bottom: 300px;
 }
-.easy-mode {
+
+.modern-mode,
+.classic-mode {
   border: solid 3px yellow;
   height: 250px;
   width: 250px;
@@ -77,53 +78,22 @@ h2 {
   cursor: pointer;
 }
 
+.paper-emoji,
+.scissors-emoji,
+.ninja-emoji,
+.hunter-emoji,
 .rock-emoji {
   width: 125px;
   height: 125px;
   cursor: pointer;
 }
-.paper-emoji {
-  width: 125px;
-  height: 125px;
-  cursor: pointer;
-}
 
-.scissors-emoji {
-  width: 125px;
-  height: 125px;
-  cursor: pointer;
-}
-
-.ninja-emoji {
-  width: 125px;
-  height: 125px;
-  cursor: pointer;
-}
-
-.hunter-emoji {
-  width: 125px;
-  height: 125px;
-  cursor: pointer;
-}
 p {
   font-size: 10px;
 }
 
-.hard-mode {
-  border: solid 3px yellow;
-  height: 250px;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 .computer-section {
   background-color: rgb(223, 205, 108);
-
   width: 20%;
   border: solid 3px blue;
 }
