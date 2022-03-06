@@ -27,6 +27,11 @@ main {
   font-size: 20;
 }
 
+.choose-game {
+  color: rgb(228, 216, 53);
+  background-color: black;
+}
+
 .main-section {
   background-color: rgb(228, 216, 53);
   width: 60%;
@@ -56,6 +61,10 @@ h2 {
   font-size: 20;
 }
 
+.modern-weapons,
+.classic-weapons {
+  margin-bottom: 300px;
+}
 .easy-mode {
   border: solid 3px yellow;
   height: 250px;
@@ -65,8 +74,37 @@ h2 {
   justify-content: center;
   align-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
+.rock-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+.paper-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.scissors-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.ninja-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
+
+.hunter-emoji {
+  width: 125px;
+  height: 125px;
+  cursor: pointer;
+}
 p {
   font-size: 10px;
 }
@@ -80,6 +118,7 @@ p {
   justify-content: center;
   align-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .computer-section {
@@ -96,4 +135,8 @@ p {
 .computer-wins {
   border: solid 3px green;
   font-size: 20;
+}
+
+.hidden {
+  display: none;
 }
