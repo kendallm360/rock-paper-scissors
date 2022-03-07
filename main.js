@@ -14,6 +14,8 @@ var scissors = document.querySelector(".scissors-emoji");
 var hunter = document.querySelector(".hunter-emoji");
 var ninja = document.querySelector(".ninja-emoji");
 var winnerBox = document.querySelector(".winner-box");
+var humanWeaponBox = document.querySelector(".human-weapon-emoji");
+var computerWeaponBox = document.querySelector(".computer-weapon-emoji");
 var winnerAlert = document.querySelector(".winner-alert");
 var humanWins = document.querySelector(".human-wins");
 var computerWins = document.querySelector(".computer-wins");
@@ -142,7 +144,6 @@ function pickScissors() {
 
 function pickHunter() {
   game.declareModernWinner("hunter");
-
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
@@ -184,7 +185,11 @@ function displayWinner() {
   modernGame.classList.add("hidden");
   winnerAlert.classList.remove("hidden");
   //NEED TO CONNECT EMOJI TO THE LINE BELOW INSTEAD OF THE TEXT
-  winnerBox.innerText = game.player.weapon + " EMOJI WILL BE HERE";
+  checkClassicWeapon();
+  checkModernWeapon();
+  checkComputerWeaponClassic();
+  checkComputerWeaponModern();
+  // winnerBox.innerText = game.player.weapon + " EMOJI WILL BE HERE";
   setTimeout(function () {
     if (game.gameMode === "modern") {
       showModernWeapons();
@@ -192,4 +197,46 @@ function displayWinner() {
       showClassicWeapons();
     }
   }, 1500);
+}
+
+function checkClassicWeapon() {
+  if (game.player.weapon === "rock") {
+    humanWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+  }
+  if (game.player.weapon === "paper") {
+    humanWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+  }
+  if (game.player.weapon === "scissors") {
+    humanWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+  }
+}
+
+function checkModernWeapon() {
+  if (game.player.weapon === "hunter") {
+    humanWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+  }
+  if (game.player.weapon == "ninja") {
+    humanWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+  }
+}
+
+function checkComputerWeaponClassic() {
+  if (game.computerWeapon === "rock") {
+    computerWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+  }
+  if (game.computerWeapon === "paper") {
+    computerWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+  }
+  if (game.computerWeapon === "scissors") {
+    computerWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+  }
+}
+
+function checkComputerWeaponModern() {
+  if (game.computerWeapon === "hunter") {
+    computerWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+  }
+  if (game.computerWeapon == "ninja") {
+    computerWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+  }
 }
