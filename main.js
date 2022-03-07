@@ -84,11 +84,11 @@ function pickRock() {
   }
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
@@ -105,11 +105,11 @@ function pickPaper() {
   }
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
@@ -125,11 +125,11 @@ function pickScissors() {
   }
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
@@ -146,11 +146,11 @@ function pickHunter() {
   game.declareModernWinner("hunter");
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
@@ -162,11 +162,11 @@ function pickNinja() {
   game.declareModernWinner("ninja");
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
@@ -194,47 +194,67 @@ function displayWinner() {
     } else {
       showClassicWeapons();
     }
-  }, 1500);
+  }, 2000);
 }
 
 function checkClassicWeapon() {
   if (game.player.weapon === "rock") {
-    humanWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
   }
   if (game.player.weapon === "paper") {
-    humanWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
   }
   if (game.player.weapon === "scissors") {
-    humanWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
   }
 }
 
 function checkModernWeapon() {
   if (game.player.weapon === "hunter") {
-    humanWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
   }
   if (game.player.weapon == "ninja") {
-    humanWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
   }
 }
 
 function checkComputerWeaponClassic() {
   if (game.computerWeapon === "rock") {
-    computerWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
   }
   if (game.computerWeapon === "paper") {
-    computerWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
   }
   if (game.computerWeapon === "scissors") {
-    computerWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
   }
 }
 
 function checkComputerWeaponModern() {
   if (game.computerWeapon === "hunter") {
-    computerWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
   }
   if (game.computerWeapon == "ninja") {
-    computerWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
   }
 }
