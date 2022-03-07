@@ -184,12 +184,10 @@ function displayWinner() {
   classicGame.classList.add("hidden");
   modernGame.classList.add("hidden");
   winnerAlert.classList.remove("hidden");
-  //NEED TO CONNECT EMOJI TO THE LINE BELOW INSTEAD OF THE TEXT
   checkClassicWeapon();
   checkModernWeapon();
   checkComputerWeaponClassic();
   checkComputerWeaponModern();
-  // winnerBox.innerText = game.player.weapon + " EMOJI WILL BE HERE";
   setTimeout(function () {
     if (game.gameMode === "modern") {
       showModernWeapons();
