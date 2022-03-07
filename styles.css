@@ -11,19 +11,31 @@ main {
   flex-direction: row;
 }
 
-.human-section {
-  background-color: rgb(223, 205, 108);
+.human-section,
+.computer-section {
+  background-color: rgb(242, 245, 50);
   border: solid 3px red;
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 }
 
 .human-icon {
   border: solid 3px yellow;
 }
 
-.human-wins {
+.human-emoji,
+.computer-emoji {
+  width: 200px;
+  height: 200px;
+}
+
+.human-wins,
+.computer-wins {
   border: solid 3px green;
-  font-size: 20;
+  font-size: 30;
 }
 
 .change-game {
@@ -113,19 +125,8 @@ p {
   font-size: 10px;
 }
 
-.computer-section {
-  background-color: rgb(223, 205, 108);
-  width: 20%;
-  border: solid 3px blue;
-}
-
 .computer-icon {
   border: solid 3px yellow;
-}
-
-.computer-wins {
-  border: solid 3px green;
-  font-size: 20;
 }
 
 .hidden {
