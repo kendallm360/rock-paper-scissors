@@ -51,6 +51,8 @@ function showClassicWeapons() {
   rock.classList.remove("hidden");
   paper.classList.remove("hidden");
   scissors.classList.remove("hidden");
+  winnerAlert.classList.add("hidden");
+  winnerBox.classList.add("hidden");
 }
 
 function showModernWeapons() {
@@ -67,6 +69,8 @@ function showModernWeapons() {
   rock.classList.remove("hidden");
   paper.classList.remove("hidden");
   scissors.classList.remove("hidden");
+  winnerAlert.classList.add("hidden");
+  winnerBox.classList.add("hidden");
 }
 
 function newGame() {
@@ -181,7 +185,11 @@ function displayWinner() {
 
   setTimeout(function () {
     //everything here will be what shows after reset
-    winnerAlert.innerText = "test";
+    if (game.gameMode === "modern") {
+      showModernWeapons();
+    } else {
+      showClassicWeapons();
+    }
   }, 2000);
 }
 
