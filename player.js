@@ -1,8 +1,8 @@
 class Player {
   constructor(name, weapon) {
     this.name = name;
-    this.wins = 0;
     this.weapon = weapon;
+    this.wins = 0;
   }
   getClassicWeapon(weaponClicked) {
     var options = ["rock", "paper", "scissors"];
