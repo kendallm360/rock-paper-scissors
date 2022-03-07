@@ -81,11 +81,11 @@ function pickRock() {
     game.declareModernWinner("rock");
   }
   if (game.winner === "human") {
-    humanWins.innerText += game.player.wins;
+    humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
   }
   if (game.winner === "computer") {
-    computerWins.innerText += game.computerWins;
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
     winnerAlert.innerText = "The Computer Wins This Round";
   }
   if (game.winner === "draw") {
@@ -102,9 +102,11 @@ function pickPaper() {
     game.declareModernWinner("paper");
   }
   if (game.winner === "human") {
+    humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
   }
   if (game.winner === "computer") {
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
     winnerAlert.innerText = "The Computer Wins This Round";
   }
   if (game.winner === "draw") {
@@ -120,9 +122,11 @@ function pickScissors() {
     game.declareModernWinner("scissors");
   }
   if (game.winner === "human") {
+    humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
   }
   if (game.winner === "computer") {
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
     winnerAlert.innerText = "The Computer Wins This Round";
   }
   if (game.winner === "draw") {
@@ -140,9 +144,11 @@ function pickHunter() {
   game.declareModernWinner("hunter");
 
   if (game.winner === "human") {
+    humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
   }
   if (game.winner === "computer") {
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
     winnerAlert.innerText = "The Computer Wins This Round";
   }
   if (game.winner === "draw") {
@@ -154,9 +160,11 @@ function pickHunter() {
 function pickNinja() {
   game.declareModernWinner("ninja");
   if (game.winner === "human") {
+    humanWins.innerText = "Human Wins: " + game.player.wins;
     winnerAlert.innerText = "The Human Wins This Round";
   }
   if (game.winner === "computer") {
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
     winnerAlert.innerText = "The Computer Wins This Round";
   }
   if (game.winner === "draw") {
@@ -183,5 +191,5 @@ function displayWinner() {
     } else {
       showClassicWeapons();
     }
-  }, 2000);
+  }, 1500);
 }
