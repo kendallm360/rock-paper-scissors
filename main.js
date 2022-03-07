@@ -4,7 +4,7 @@ var game = new Game();
 var changeGame = document.querySelector(".change-game");
 var chooseGame = document.querySelector(".choose-game");
 var chooseWeapon = document.querySelector(".choose-weapon");
-var winnerAlert = document.querySelector(".winner-alert");
+// var winnerAlert = document.querySelector(".winner-alert");
 var classicGame = document.querySelector(".classic-mode");
 var modernGame = document.querySelector(".modern-mode");
 var classicWeapons = document.querySelector(".classic-weapons");
@@ -81,45 +81,91 @@ function newGame() {
 function pickRock() {
   if (game.gameMode === "classic") {
     game.declareClassicWinner("rock");
-  } else {
+  }
+  if (game.gameMode === "modern") {
     game.declareModernWinner("rock");
   }
-  //   game.declareWinner();
-  // displayWinner()
+  if (game.winner === "human") {
+    winnerAlert.innerText = "The Human Wins This Round";
+  }
+  if (game.winner === "computer") {
+    winnerAlert.innerText = "The Computer Wins This Round";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
+  displayWinner();
 }
 
 function pickPaper() {
-  var response = game.declareModernWinner("paper");
-  console.log(response);
-
-  //   game.declareWinner();
-  // displayWinner()
+  if (game.gameMode === "classic") {
+    game.declareClassicWinner("paper");
+  }
+  if (game.gameMode === "modern") {
+    game.declareModernWinner("paper");
+  }
+  if (game.winner === "human") {
+    winnerAlert.innerText = "The Human Wins This Round";
+  }
+  if (game.winner === "computer") {
+    winnerAlert.innerText = "The Computer Wins This Round";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
+  displayWinner();
 }
 
 function pickScissors() {
-  var response = game.declareModernWinner("scissors");
-  console.log(response);
-
-  //   game.declareWinner();
-  // displayWinner()
+  if (game.gameMode === "classic") {
+    game.declareClassicWinner("scissors");
+  } else {
+    game.declareModernWinner("scissors");
+  }
+  if (game.winner === "human") {
+    winnerAlert.innerText = "The Human Wins This Round";
+  }
+  if (game.winner === "computer") {
+    winnerAlert.innerText = "The Computer Wins This Round";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
+  winnerAlert.classList.remove("hidden");
+  console.log("comp weapon", game.computerWeapon);
+  console.log("hum weapon", game.player.weapon);
+  console.log("comp score", game.computerWins);
+  console.log("hum score", game.player.wins);
+  displayWinner();
 }
 
 function pickHunter() {
-  var response = game.declareModernWinner("ninja");
-  console.log(response);
+  game.declareModernWinner("hunter");
 
-  //   Game.declareWinner();
+  if (game.winner === "human") {
+    winnerAlert.innerText = "The Human Wins This Round";
+  }
+  if (game.winner === "computer") {
+    winnerAlert.innerText = "The Computer Wins This Round";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
   displayWinner();
 }
 
 function pickNinja() {
-  var response = game.declareModernWinner("ninja");
-
-  console.log(response);
-  console.log("comp weapon", game.computerWeapon);
-  console.log("hum weapon", game.humanWeapon);
-  console.log("comp score", game.computerWins);
-  console.log("hum score", game.player.wins);
+  game.declareModernWinner("ninja");
+  if (game.winner === "human") {
+    winnerAlert.innerText = "The Human Wins This Round";
+  }
+  if (game.winner === "computer") {
+    winnerAlert.innerText = "The Computer Wins This Round";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
+  displayWinner();
 }
 
 function displayWinner() {
@@ -131,6 +177,7 @@ function displayWinner() {
   classicWeapons.classList.add("hidden");
   classicGame.classList.add("hidden");
   modernGame.classList.add("hidden");
+  winnerAlert.classList.remove("hidden");
 
   setTimeout(function () {
     //everything here will be what shows after reset

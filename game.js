@@ -6,6 +6,7 @@ class Game {
     this.computerWeapon = "";
     this.computerWins = 0;
     this.gameMode = "";
+    this.winner = "";
   }
 
   startNewGame(gameMode) {
@@ -23,20 +24,25 @@ class Game {
     this.playClassicRound(weaponClicked);
     if (this.player.weapon === "rock" && this.computerWeapon === "scissors") {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (this.player.weapon === "paper" && this.computerWeapon === "rock") {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (this.player.weapon === "scissors" && this.computerWeapon === "paper") {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (this.player.weapon === this.computerWeapon) {
+      this.winner = "draw";
       return "It's A Draw";
     } else {
       this.computerWins++;
+      this.winner = "computer";
       return "The Computer Wins This Round";
     }
   }
@@ -53,6 +59,7 @@ class Game {
       (this.computerWeapon === "scissors" || this.computerWeapon === "ninja")
     ) {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (
@@ -60,6 +67,7 @@ class Game {
       (this.computerWeapon === "rock" || this.computerWeapon === "hunter")
     ) {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (
@@ -67,6 +75,7 @@ class Game {
       (this.computerWeapon === "paper" || this.computerWeapon === "ninja")
     ) {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (
@@ -74,6 +83,7 @@ class Game {
       (this.computerWeapon === "hunter" || this.computerWeapon === "paper")
     ) {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (
@@ -81,12 +91,15 @@ class Game {
       (this.computerWeapon === "scissors" || this.computerWeapon === "rock")
     ) {
       this.player.wins++;
+      this.winner = "human";
       return "The Human Wins This Round";
     }
     if (this.player.weapon === this.computerWeapon) {
+      this.winner = "draw";
       return "It's A Draw";
     } else {
       this.computerWins++;
+      this.winner = "computer";
       return "The Computer Wins This Round";
     }
   }
