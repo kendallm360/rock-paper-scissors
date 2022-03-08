@@ -21,8 +21,8 @@ var humanWins = document.querySelector(".human-wins");
 var computerWins = document.querySelector(".computer-wins");
 
 //EVENT LISTENERS
-classicGame.addEventListener("click", showClassicWeapons);
-modernGame.addEventListener("click", showModernWeapons);
+classicGame.addEventListener("click", () => handleGameVariant(true));
+modernGame.addEventListener("click", () => handleGameVariant(false));
 changeGame.addEventListener("click", newGame);
 rock.addEventListener("click", pickRock);
 paper.addEventListener("click", pickPaper);
@@ -31,39 +31,27 @@ hunter.addEventListener("click", pickHunter);
 ninja.addEventListener("click", pickNinja);
 
 //FUNCTIONS
-
-function showClassicWeapons() {
-  game.startNewGame("classic");
+function handleGameVariant(isClassic) {
   changeGame.classList.remove("hidden");
   chooseGame.classList.add("hidden");
   chooseWeapon.classList.remove("hidden");
   classicWeapons.classList.remove("hidden");
   classicGame.classList.add("hidden");
   modernGame.classList.add("hidden");
-  hunter.classList.add("hidden");
-  ninja.classList.add("hidden");
   rock.classList.remove("hidden");
   paper.classList.remove("hidden");
   scissors.classList.remove("hidden");
   winnerAlert.classList.add("hidden");
   winnerBox.classList.add("hidden");
-}
-
-function showModernWeapons() {
-  game.startNewGame("modern");
-  changeGame.classList.remove("hidden");
-  chooseGame.classList.add("hidden");
-  chooseWeapon.classList.remove("hidden");
-  classicWeapons.classList.remove("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
-  hunter.classList.remove("hidden");
-  ninja.classList.remove("hidden");
-  rock.classList.remove("hidden");
-  paper.classList.remove("hidden");
-  scissors.classList.remove("hidden");
-  winnerAlert.classList.add("hidden");
-  winnerBox.classList.add("hidden");
+  if (isClassic === true) {
+    game.startNewGame("classic");
+    hunter.classList.add("hidden");
+    ninja.classList.add("hidden");
+  } else {
+    game.startNewGame("modern");
+    hunter.classList.remove("hidden");
+    ninja.classList.remove("hidden");
+  }
 }
 
 function newGame() {
@@ -190,9 +178,9 @@ function displayWinner() {
   checkComputerWeaponModern();
   setTimeout(function () {
     if (game.gameMode === "modern") {
-      showModernWeapons();
+      handleGameVariant(false);
     } else {
-      showClassicWeapons();
+      handleGameVariant(true);
     }
   }, 2000);
 }
