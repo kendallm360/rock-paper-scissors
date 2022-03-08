@@ -185,64 +185,57 @@ function displayWinner() {
   }, 2000);
 }
 
+function setWeapon(weapon, isPlayer) {
+  if (isPlayer === true) {
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  } else {
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  }
+}
+
 function checkClassicWeapon() {
   if (game.player.weapon === "rock") {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    setWeapon("rock", true);
   }
   if (game.player.weapon === "paper") {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    setWeapon("paper", true);
   }
   if (game.player.weapon === "scissors") {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    setWeapon("scissors", true);
   }
 }
 
 function checkModernWeapon() {
   if (game.player.weapon === "hunter") {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    setWeapon("hunter", true);
   }
   if (game.player.weapon == "ninja") {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    setWeapon("ninja", true);
   }
 }
 
 function checkComputerWeaponClassic() {
   if (game.computerWeapon === "rock") {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    setWeapon("rock", false);
   }
   if (game.computerWeapon === "paper") {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    setWeapon("paper", false);
   }
+
   if (game.computerWeapon === "scissors") {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    setWeapon("scissors", false);
   }
 }
 
 function checkComputerWeaponModern() {
   if (game.computerWeapon === "hunter") {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    setWeapon("hunter", false);
   }
   if (game.computerWeapon == "ninja") {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    setWeapon("ninja", false);
   }
 }
