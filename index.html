@@ -10,13 +10,14 @@
   <body>
     <main>
       <section class="human-section">
-        <div class="human-icon">
-          <img
-            class="human-emoji"
-            src="./circle-user-solid.svg"
-            alt="Emoji of the Human's Character"
-          />
-        </div>
+        <img
+          class="human-emoji"
+          src="./man.png"
+          alt="Emoji of the Human's Character"
+        />
+        <img
+          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>😎 </text></svg>"
+        />
         <p class="human-wins">Human Wins: 0</p>
         <button class="change-game hidden">CHANGE GAME</button>
       </section>
@@ -32,13 +33,13 @@
         <form class="classic-weapons hidden">
           <img
             class="rock-emoji"
-            src="./rocks.png"
+            src="./rock.png"
             alt="Emoji of the Rock Weapon"
             value="rock"
           />
           <img
             class="paper-emoji"
-            src="./documents.png"
+            src="./paper.png"
             alt="Emoji of the Paper Weapon"
           />
           <img
@@ -58,43 +59,40 @@
           />
         </form>
 
-        <!-- <form class="modern-weapons hidden">
-          <img
-            class="modern-rock-emoji"
-            src="./rocks.png"
-            alt="Emoji of the Rock Weapon"
-          />
-          <img
-            class="modern-paper-emoji"
-            src="./documents.png"
-            alt="Emoji of the Paper Weapon"
-          />
-          <img
-            class="modern-scissors-emoji"
-            src="./scissors.png"
-            alt="Emoji of the Scissors Weapon"
-          />
-          <img
-            class="modern-hunter-emoji"
-            src="./hunter.png"
-            alt="Emoji of the Hunter Character"
-          />
-          <img
-            class="modern-ninja-emoji"
-            src="./ninja.png"
-            alt="Emoji of the Ninja Character"
-          />
-        </form> -->
-
         <form class="classic-mode">
-          <h3>Classic</h3>
+          <h3>
+            <img
+              class="rock-mini"
+              src="./rock.png"
+              alt="Emoji of the Rock Weapon"
+              value="rock"
+            />
+            Classic
+            <img
+              class="scissors-mini"
+              src="./scissors.png"
+              alt="Emoji of the Scissors Weapon"
+            />
+          </h3>
           <p>rock > scissors</p>
           <p>paper > rock</p>
           <p>scissors > paper</p>
         </form>
 
         <form class="modern-mode">
-          <h3>Custom</h3>
+          <h3>
+            <img
+              class="hunter-mini"
+              src="./hunter.png"
+              alt="Emoji of the Hunter Character"
+            />
+            Modern
+            <img
+              class="ninja-mini"
+              src="./ninja.png"
+              alt="Emoji of the Ninja Character"
+            />
+          </h3>
           <p>rock > scissors & ninja</p>
           <p>paper > rock & hunter</p>
           <p>scissors > paper & ninja</p>
@@ -109,13 +107,14 @@
       </section>
 
       <section class="computer-section">
-        <div class="computer-icon">
-          <img
-            class="computer-emoji"
-            src="./desktop-solid.svg"
-            alt="Emoji of the Computer's Character"
-          />
-        </div>
+        <img
+          class="computer-emoji"
+          src="./desktop.png"
+          alt="Emoji of the Computer's Character"
+        />
+        <img
+          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💻 </text></svg>"
+        />
         <p class="computer-wins">Computer Wins: 0</p>
       </section>
     </main>

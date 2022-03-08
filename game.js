@@ -2,7 +2,6 @@ class Game {
   constructor() {
     this.player = new Player("human");
     this.computer = new Player("computer");
-    // this.player.weapon = null;
     this.computerWeapon = "";
     this.computerWins = 0;
     this.gameMode = "";

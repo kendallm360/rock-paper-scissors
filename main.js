@@ -21,8 +21,8 @@ var humanWins = document.querySelector(".human-wins");
 var computerWins = document.querySelector(".computer-wins");
 
 //EVENT LISTENERS
-classicGame.addEventListener("click", showClassicWeapons);
-modernGame.addEventListener("click", showModernWeapons);
+classicGame.addEventListener("click", () => handleGameVariant(true));
+modernGame.addEventListener("click", () => handleGameVariant(false));
 changeGame.addEventListener("click", newGame);
 rock.addEventListener("click", pickRock);
 paper.addEventListener("click", pickPaper);
@@ -31,46 +31,28 @@ hunter.addEventListener("click", pickHunter);
 ninja.addEventListener("click", pickNinja);
 
 //FUNCTIONS
-
-function showClassicWeapons() {
-  game.startNewGame("classic");
+function handleGameVariant(isClassic) {
+  hideAllElements();
   changeGame.classList.remove("hidden");
-  chooseGame.classList.add("hidden");
   chooseWeapon.classList.remove("hidden");
   classicWeapons.classList.remove("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
-  hunter.classList.add("hidden");
-  ninja.classList.add("hidden");
   rock.classList.remove("hidden");
   paper.classList.remove("hidden");
   scissors.classList.remove("hidden");
-  winnerAlert.classList.add("hidden");
-  winnerBox.classList.add("hidden");
-}
-
-function showModernWeapons() {
-  game.startNewGame("modern");
-  changeGame.classList.remove("hidden");
-  chooseGame.classList.add("hidden");
-  chooseWeapon.classList.remove("hidden");
-  classicWeapons.classList.remove("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
-  hunter.classList.remove("hidden");
-  ninja.classList.remove("hidden");
-  rock.classList.remove("hidden");
-  paper.classList.remove("hidden");
-  scissors.classList.remove("hidden");
-  winnerAlert.classList.add("hidden");
-  winnerBox.classList.add("hidden");
+  if (isClassic === true) {
+    game.startNewGame("classic");
+    hunter.classList.add("hidden");
+    ninja.classList.add("hidden");
+  } else {
+    game.startNewGame("modern");
+    hunter.classList.remove("hidden");
+    ninja.classList.remove("hidden");
+  }
 }
 
 function newGame() {
-  changeGame.classList.add("hidden");
+  hideAllElements();
   chooseGame.classList.remove("hidden");
-  chooseWeapon.classList.add("hidden");
-  classicWeapons.classList.add("hidden");
   classicGame.classList.remove("hidden");
   modernGame.classList.remove("hidden");
 }
@@ -82,17 +64,7 @@ function pickRock() {
   if (game.gameMode === "modern") {
     game.declareModernWinner("rock");
   }
-  if (game.winner === "human") {
-    humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
-  }
-  if (game.winner === "computer") {
-    computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
-  }
-  if (game.winner === "draw") {
-    winnerAlert.innerText = "It's A Draw";
-  }
+  declareWinner();
   displayWinner();
 }
 
@@ -103,17 +75,7 @@ function pickPaper() {
   if (game.gameMode === "modern") {
     game.declareModernWinner("paper");
   }
-  if (game.winner === "human") {
-    humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
-  }
-  if (game.winner === "computer") {
-    computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
-  }
-  if (game.winner === "draw") {
-    winnerAlert.innerText = "It's A Draw";
-  }
+  declareWinner();
   displayWinner();
 }
 
@@ -123,120 +85,121 @@ function pickScissors() {
   } else {
     game.declareModernWinner("scissors");
   }
-  if (game.winner === "human") {
-    humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
-  }
-  if (game.winner === "computer") {
-    computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
-  }
-  if (game.winner === "draw") {
-    winnerAlert.innerText = "It's A Draw";
-  }
-  winnerAlert.classList.remove("hidden");
-  console.log("comp weapon", game.computerWeapon);
-  console.log("hum weapon", game.player.weapon);
-  console.log("comp score", game.computerWins);
-  console.log("hum score", game.player.wins);
+  declareWinner();
   displayWinner();
 }
 
 function pickHunter() {
   game.declareModernWinner("hunter");
-  if (game.winner === "human") {
-    humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
-  }
-  if (game.winner === "computer") {
-    computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
-  }
-  if (game.winner === "draw") {
-    winnerAlert.innerText = "It's A Draw";
-  }
+  declareWinner();
   displayWinner();
 }
 
 function pickNinja() {
   game.declareModernWinner("ninja");
+  declareWinner();
+  displayWinner();
+}
+
+//HELPER FUNCTIONS?
+function declareWinner() {
   if (game.winner === "human") {
     humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "The Human Wins This Round";
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
   }
   if (game.winner === "computer") {
     computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "The Computer Wins This Round";
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
   }
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
   }
-  displayWinner();
 }
 
 function displayWinner() {
+  hideAllElements();
   winnerBox.classList.remove("hidden");
-  changeGame.classList.add("hidden");
-  chooseGame.classList.add("hidden");
-  chooseWeapon.classList.add("hidden");
   winnerAlert.classList.remove("hidden");
-  classicWeapons.classList.add("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
-  winnerAlert.classList.remove("hidden");
-  //NEED TO CONNECT EMOJI TO THE LINE BELOW INSTEAD OF THE TEXT
   checkClassicWeapon();
   checkModernWeapon();
   checkComputerWeaponClassic();
   checkComputerWeaponModern();
-  // winnerBox.innerText = game.player.weapon + " EMOJI WILL BE HERE";
   setTimeout(function () {
     if (game.gameMode === "modern") {
-      showModernWeapons();
+      handleGameVariant(false);
     } else {
-      showClassicWeapons();
+      handleGameVariant(true);
     }
-  }, 1500);
+  }, 2000);
+}
+
+function setWeapon(weapon, isPlayer) {
+  if (isPlayer === true) {
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  } else {
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  }
 }
 
 function checkClassicWeapon() {
   if (game.player.weapon === "rock") {
-    humanWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    setWeapon("rock", true);
   }
   if (game.player.weapon === "paper") {
-    humanWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    setWeapon("paper", true);
   }
   if (game.player.weapon === "scissors") {
-    humanWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    setWeapon("scissors", true);
   }
 }
 
 function checkModernWeapon() {
   if (game.player.weapon === "hunter") {
-    humanWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    setWeapon("hunter", true);
   }
   if (game.player.weapon == "ninja") {
-    humanWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    setWeapon("ninja", true);
   }
 }
 
 function checkComputerWeaponClassic() {
   if (game.computerWeapon === "rock") {
-    computerWeaponBox.innerHTML = `<img class="rock-emoji" src="./rocks.png" alt="Emoji of the Rock Weapon"/>`;
+    setWeapon("rock", false);
   }
   if (game.computerWeapon === "paper") {
-    computerWeaponBox.innerHTML = `<img class="paper-emoji" src="./documents.png" alt="Emoji of the Paper Weapon"/>`;
+    setWeapon("paper", false);
   }
+
   if (game.computerWeapon === "scissors") {
-    computerWeaponBox.innerHTML = ` <img class="scissors-emoji" src="./scissors.png" alt="Emoji of the Scissors Weapon"/>`;
+    setWeapon("scissors", false);
   }
 }
 
 function checkComputerWeaponModern() {
   if (game.computerWeapon === "hunter") {
-    computerWeaponBox.innerHTML = `<img class="hunter-emoji" src="./hunter.png" alt="Emoji of the Hunter Character" />`;
+    setWeapon("hunter", false);
   }
   if (game.computerWeapon == "ninja") {
-    computerWeaponBox.innerHTML = ` <img class="ninja-emoji" src="./ninja.png" alt="Emoji of the Ninja Character"/>`;
+    setWeapon("ninja", false);
   }
+}
+
+function hideAllElements() {
+  winnerBox.classList.add("hidden");
+  winnerAlert.classList.add("hidden");
+  changeGame.classList.add("hidden");
+  chooseGame.classList.add("hidden");
+  chooseWeapon.classList.add("hidden");
+  classicWeapons.classList.add("hidden");
+  classicGame.classList.add("hidden");
+  modernGame.classList.add("hidden");
+  rock.classList.add("hidden");
+  paper.classList.add("hidden");
+  scissors.classList.add("hidden");
+  hunter.classList.add("hidden");
+  ninja.classList.add("hidden");
 }

@@ -14,6 +14,7 @@ class Player {
     var i = Math.floor(Math.random() * options.length);
     return weaponClicked || options[i];
   }
+
   chooseWeapon(weaponClicked) {
     return weaponClicked || this.getModernWeapon();
   }
