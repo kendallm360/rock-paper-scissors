@@ -32,17 +32,13 @@ ninja.addEventListener("click", pickNinja);
 
 //FUNCTIONS
 function handleGameVariant(isClassic) {
+  hideAllElements();
   changeGame.classList.remove("hidden");
-  chooseGame.classList.add("hidden");
   chooseWeapon.classList.remove("hidden");
   classicWeapons.classList.remove("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
   rock.classList.remove("hidden");
   paper.classList.remove("hidden");
   scissors.classList.remove("hidden");
-  winnerAlert.classList.add("hidden");
-  winnerBox.classList.add("hidden");
   if (isClassic === true) {
     game.startNewGame("classic");
     hunter.classList.add("hidden");
@@ -55,10 +51,8 @@ function handleGameVariant(isClassic) {
 }
 
 function newGame() {
-  changeGame.classList.add("hidden");
+  hideAllElements();
   chooseGame.classList.remove("hidden");
-  chooseWeapon.classList.add("hidden");
-  classicWeapons.classList.add("hidden");
   classicGame.classList.remove("hidden");
   modernGame.classList.remove("hidden");
 }
@@ -122,11 +116,6 @@ function pickScissors() {
   if (game.winner === "draw") {
     winnerAlert.innerText = "It's A Draw";
   }
-  winnerAlert.classList.remove("hidden");
-  console.log("comp weapon", game.computerWeapon);
-  console.log("hum weapon", game.player.weapon);
-  console.log("comp score", game.computerWins);
-  console.log("hum score", game.player.wins);
   displayWinner();
 }
 
@@ -163,14 +152,8 @@ function pickNinja() {
 }
 
 function displayWinner() {
+  hideAllElements();
   winnerBox.classList.remove("hidden");
-  changeGame.classList.add("hidden");
-  chooseGame.classList.add("hidden");
-  chooseWeapon.classList.add("hidden");
-  winnerAlert.classList.remove("hidden");
-  classicWeapons.classList.add("hidden");
-  classicGame.classList.add("hidden");
-  modernGame.classList.add("hidden");
   winnerAlert.classList.remove("hidden");
   checkClassicWeapon();
   checkModernWeapon();
@@ -238,4 +221,20 @@ function checkComputerWeaponModern() {
   if (game.computerWeapon == "ninja") {
     setWeapon("ninja", false);
   }
+}
+
+function hideAllElements() {
+  winnerBox.classList.add("hidden");
+  winnerAlert.classList.add("hidden");
+  changeGame.classList.add("hidden");
+  chooseGame.classList.add("hidden");
+  chooseWeapon.classList.add("hidden");
+  classicWeapons.classList.add("hidden");
+  classicGame.classList.add("hidden");
+  modernGame.classList.add("hidden");
+  rock.classList.add("hidden");
+  paper.classList.add("hidden");
+  scissors.classList.add("hidden");
+  hunter.classList.add("hidden");
+  ninja.classList.add("hidden");
 }

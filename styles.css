@@ -86,6 +86,14 @@ h2 {
   cursor: pointer;
 }
 
+.hunter-mini,
+.ninja-mini,
+.rock-mini,
+.scissors-mini {
+  width: 35px;
+  height: 35px;
+}
+
 .modern-mode {
   padding-bottom: 10px;
 }
