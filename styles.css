@@ -40,7 +40,7 @@ main {
 }
 
 .main-section {
-  background-color: rgb(228, 216, 53);
+  background-color: rgb(247, 232, 33);
   width: 60%;
   border: solid 3px black;
   display: flex;
@@ -85,6 +85,7 @@ h2 {
 .modern-mode,
 .classic-mode {
   border: solid 3px black;
+  background-color: rgb(242, 245, 50);
   font-size: 20;
   height: 275px;
   width: 275px;
