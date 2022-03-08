@@ -10,8 +10,6 @@ Solidify and demonstrate your understanding of:
 - Understand the difference between the data model and how the data is displayed on the DOM
 - Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical         challenge
 
-### Contributor: Kendall McGree
-
 ### Technologies Used
 - JavaScript
 - HTML
@@ -44,3 +42,6 @@ Solidify and demonstrate your understanding of:
 - ColoRandom
 - ROMCOM
 - Turing Front End Lessons
+
+
+### Contributor: Kendall McGree
