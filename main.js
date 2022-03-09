@@ -50,13 +50,6 @@ function handleGameVariant(isClassic) {
   }
 }
 
-function newGame() {
-  hideAllElements();
-  chooseGame.classList.remove("hidden");
-  classicGame.classList.remove("hidden");
-  modernGame.classList.remove("hidden");
-}
-
 function pickRock() {
   if (game.gameMode === "classic") {
     game.declareClassicWinner("rock");
@@ -64,7 +57,7 @@ function pickRock() {
   if (game.gameMode === "modern") {
     game.declareModernWinner("rock");
   }
-  declareWinner();
+  listWinner();
   displayWinner();
 }
 
@@ -75,7 +68,7 @@ function pickPaper() {
   if (game.gameMode === "modern") {
     game.declareModernWinner("paper");
   }
-  declareWinner();
+  listWinner();
   displayWinner();
 }
 
@@ -85,35 +78,20 @@ function pickScissors() {
   } else {
     game.declareModernWinner("scissors");
   }
-  declareWinner();
+  listWinner();
   displayWinner();
 }
 
 function pickHunter() {
   game.declareModernWinner("hunter");
-  declareWinner();
+  listWinner();
   displayWinner();
 }
 
 function pickNinja() {
   game.declareModernWinner("ninja");
-  declareWinner();
+  listWinner();
   displayWinner();
-}
-
-//HELPER FUNCTIONS?
-function declareWinner() {
-  if (game.winner === "human") {
-    humanWins.innerText = "Human Wins: " + game.player.wins;
-    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
-  }
-  if (game.winner === "computer") {
-    computerWins.innerText = "Computer Wins: " + game.computerWins;
-    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
-  }
-  if (game.winner === "draw") {
-    winnerAlert.innerText = "It's A Draw";
-  }
 }
 
 function displayWinner() {
@@ -131,18 +109,6 @@ function displayWinner() {
       handleGameVariant(true);
     }
   }, 2000);
-}
-
-function setWeapon(weapon, isPlayer) {
-  if (isPlayer === true) {
-    humanWeaponBox.innerHTML =
-      "YOUR WEAPON " +
-      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
-  } else {
-    computerWeaponBox.innerHTML =
-      "COMPUTER'S WEAPON " +
-      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
-  }
 }
 
 function checkClassicWeapon() {
@@ -186,6 +152,40 @@ function checkComputerWeaponModern() {
   if (game.computerWeapon == "ninja") {
     setWeapon("ninja", false);
   }
+}
+
+//HELPER FUNCTIONS
+function listWinner() {
+  if (game.winner === "human") {
+    humanWins.innerText = "Human Wins: " + game.player.wins;
+    winnerAlert.innerText = "😎 The Human Wins This Round 😎";
+  }
+  if (game.winner === "computer") {
+    computerWins.innerText = "Computer Wins: " + game.computerWins;
+    winnerAlert.innerText = "💻 The Computer Wins This Round 💻";
+  }
+  if (game.winner === "draw") {
+    winnerAlert.innerText = "It's A Draw";
+  }
+}
+
+function setWeapon(weapon, isPlayer) {
+  if (isPlayer === true) {
+    humanWeaponBox.innerHTML =
+      "YOUR WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  } else {
+    computerWeaponBox.innerHTML =
+      "COMPUTER'S WEAPON " +
+      `<img class="${weapon}-emoji" src="./${weapon}.png" alt="Emoji of the ${weapon} Weapon"/>`;
+  }
+}
+
+function newGame() {
+  hideAllElements();
+  chooseGame.classList.remove("hidden");
+  classicGame.classList.remove("hidden");
+  modernGame.classList.remove("hidden");
 }
 
 function hideAllElements() {
