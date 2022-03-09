@@ -31,6 +31,9 @@ Solidify and demonstrate your understanding of:
 ### Visualization
 - See a demo of the app [here](https://media.giphy.com/media/82DQgHqYBNrechqKGS/giphy.gif)
 
+### Deployed Site
+- To visit the site click [here](https://kendallm360.github.io/rock-paper-scissors/)
+
 ### Potential Additional Features
 - The option to make a new character
 - The option to change player avatar
