@@ -43,5 +43,4 @@ Solidify and demonstrate your understanding of:
 - ROMCOM
 - Turing Front End Lessons
 
-
 ### Contributor: Kendall McGree
