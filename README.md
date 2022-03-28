@@ -26,7 +26,7 @@ Solidify and demonstrate your understanding of:
 - Understanding the interaction between classes and their parameters when building the logic for changing screens.
 
 ### Wins
-- I still feel strong with the html and css.  I also like (interacting with the DOM?) with query selectors and event listeners. I like that there is a general set path of logic to follow so it was easier for me to pick up on this concept.
+- I still feel strong with the html and css.  I also like interacting with the DOM via query selectors and event listeners. I like that there is a general set path of logic to follow so it was easier for me to pick up on this concept.
 
 ### Visualization
 ![gif](https://media.giphy.com/media/82DQgHqYBNrechqKGS/giphy.gif)
